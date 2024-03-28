@@ -1,4 +1,4 @@
-# COMP4050: APEX Project
+# PUBLIC COPY OF COMP4050: APEX Project
 
 A new system for thesis students.
 
