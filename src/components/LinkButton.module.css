@@ -1,0 +1,4 @@
+.button * {
+    width: fit-content !important;
+    border-bottom: 1px solid black !important;
+}

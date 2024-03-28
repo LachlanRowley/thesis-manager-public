@@ -1,0 +1,108 @@
+#Ribbon	{
+	display: block;
+	height: 17vh;
+	width: 100vw;
+
+/*	background-color: #A6192E;*/
+/*	color: #FFFFFF;*/
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+#Ribbon_container	{
+	position: relative;
+	display: grid;
+	grid-template-rows: 50% 50%;
+	width: 80vw;
+	height: 100%;
+	margin: auto;
+}
+
+#Ribbon_container h1	{
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+#Ribbon_searchbar_container	{
+	display: grid;
+	grid-template-columns: 60% 30% 10%;
+	grid-row: 2 / 3;
+	position: relative;
+}
+/*-----------------------------------------------------------------------------------------*/
+
+#Ribbon_searchbox	{
+	grid-column: 1 / 2;
+	width: 85%;
+	height: 2em;
+	background-color: transparent;
+	border: none;
+	border-bottom: 3px solid white;
+
+	font-size: 0.9em;
+	color: white;
+
+	position: relative;
+	top: 0.7em;
+}
+#Ribbon_searchbox::placeholder	{
+	color: white;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+
+#Ribbon_dropdown	{
+	grid-column: 2 / 3;
+	display: block;
+	width: 75%;
+	height: 2em;
+	background-color: transparent;
+	border-bottom: 3px solid white;
+
+	font-size: 0.9em;
+
+	position: relative;
+	top: 0.8em;
+}
+#Ribbon_dropdown p	{
+	position: relative;
+	top: -0.7em;
+}
+#Ribbon_dropdown_list	{
+	width: 100%;
+	background-color: #A6192E;
+	padding: 10px;
+	padding-bottom: 0px;
+	position: relative;
+	top: -1.0em;
+}
+#Ribbon_dropdown_list tr	{
+	display: block;
+	height: 2em;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+
+#Ribbon_magnifier	{
+	grid-column: 3 / 4;
+
+	display: block;
+	width: 70%;
+	height: 70%;
+
+	margin: auto;
+
+/*	background-image: url('./images/magGlass.png');*/
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+

@@ -1,0 +1,16 @@
+.ArrowButton:hover .sptxt {
+    transform: translateX(10px);
+}
+
+.Text {
+    font-weight: normal;
+    font-size: 15px;
+    color: #A6192E; 
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.Arrow {
+    width: 40px;
+    height: 40px;
+}

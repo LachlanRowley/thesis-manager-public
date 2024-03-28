@@ -1,0 +1,76 @@
+.Header	{
+	--logoWidth: 30vw;
+
+/*
+	display: grid;
+	/*grid-template-columns: 58vw fit-content(14vw) fit-content(14vw) fit-content(14vw);
+	grid-template-columns: var(--logoWidth) 2fr 2fr 2fr;
+
+
+	*/
+	width: 80%;
+	height: 14vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+.headerLink	{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: fit-content;
+	margin: 20px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.headerLink a	{
+	cursor: pointer;
+	transition-duration: 0.1s;
+	text-decoration: none;
+	color: black;
+}
+.headerLink a:hover	{
+	text-decoration: underline;
+	color: #B15E64;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+.headerLogo	{
+	display: block;
+	height: 100%;
+	width: 58vw;
+
+	background-image: url('../img/macquarie-university-logo.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+
+.swapButton	{
+	display: block;
+	background-color: #a6192e;
+	color: white;
+	width: 50%;
+	margin:auto;
+}
+.swapButton:hover	{
+	background-color: #c83b62;
+}
+.buttonContainer	{
+	display: block;
+	margin: 0px;
+	margin-bottom: 2vh;
+	padding: 0px;
+}

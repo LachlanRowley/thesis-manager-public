@@ -1,0 +1,15 @@
+.MainStack {
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 100vh;
+}
+
+.Title {
+    color: #A6192E;
+}
+
+.Logo {
+    width: 30%;
+    height: fit-content;
+    object-fit: contain;
+}

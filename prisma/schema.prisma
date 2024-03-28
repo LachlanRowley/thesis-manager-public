@@ -1,0 +1,189 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+  output   = "../ERD.md"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  uni_id        String    @unique
+  password      String
+  firstname     String
+  lastname      String
+  user_type_id  String
+  program_lead  Boolean?
+  name          String?
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  academic      Academic?
+  accounts      Account[]
+  sessions      Session[]
+  student       Student?
+  user_type     User_type @relation(fields: [user_type_id], references: [id])
+}
+
+
+model Student {
+  CP              Int
+  WAM             Int
+  discipline      String
+  discipline_enum Discipline    @relation(fields: [discipline], references: [id])
+  uni_id          String        @id @unique
+  user            User          @relation(fields: [uni_id], references: [uni_id])
+  project_id      Int? // check if students can work on multiple projects at the same time.
+  project         Project?      @relation("students_participating", fields: [project_id], references: [id])
+  preferences     Project[]     @relation("preffered_by_students")
+  presenting      Presentation?
+  unavailable_sessions Presentation_session[]
+}
+
+
+model Academic {
+  uni_id                    String                 @id @unique
+  discipline                String
+  school_id                 String
+  capacity                  Int
+  current_load              Int
+  school                    Academic_school        @relation(fields: [school_id], references: [id])
+  discipline_enum           Discipline             @relation("of_discipline", fields: [discipline], references: [id])
+  user                      User                   @relation(fields: [uni_id], references: [uni_id])
+  presentation_session      Presentation_session[]
+  second_marker_of_projects Project[]              @relation("second_marker")
+  supervised_projects       Project[]              @relation("supervises")
+  marking_presentation      Presentation[]         @relation("AcademicToPresentation")
+  co_supervised_projects    Project[]              @relation("co_supervises")
+  overseeing_discipline     Discipline[]           @relation("oversees") // an academic can oversee multiple disciplines
+}
+
+model Project {
+  id                  Int            @id @default(autoincrement())
+  title               String         @unique
+  research_question   String
+  description         String
+  skills              String
+  status              String
+  status_enum         Project_status @relation(fields: [status], references: [id])
+  project_type        String
+  project_type_enum   Project_type   @relation(fields: [project_type], references: [id])
+  industry_topic      Boolean        @default(false)
+  industry_supervisor String?
+  size                Int
+  lab_access          Lab[] // list of accessable labs
+  disciplines         Discipline[]
+  supervisor          Academic       @relation("supervises", fields: [supervisor_id], references: [uni_id])
+  supervisor_id       String
+  second_marker       Academic?      @relation("second_marker", fields: [second_marker_id], references: [uni_id])
+  second_marker_id    String?
+  co_supervisors      Academic[]     @relation("co_supervises")
+  preffered_by        Student[] @relation("preffered_by_students")
+  students            Student[] @relation("students_participating")
+  supervisor_approval          Boolean        @default(true)
+  discipline_overseer_approval Boolean        @default(true)
+}
+
+
+model Lab {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
+  address         String
+  hosted_projects Project[]
+}
+
+model Presentation {
+  id                      Int                  @id @default(autoincrement())
+  time                    DateTime
+  presentor_id            String               @unique
+  presentation_session_id Int                  @unique
+  presentation_session    Presentation_session @relation(fields: [presentation_session_id], references: [id])
+  presentor               Student              @relation(fields: [presentor_id], references: [uni_id])
+  markers                 Academic[]           @relation("AcademicToPresentation")
+}
+
+model Presentation_session {
+  id            Int           @id @default(autoincrement())
+  address       String
+  time          DateTime
+  chair_id      String
+  presentations Presentation?
+  chair         Academic      @relation(fields: [chair_id], references: [uni_id])
+  unavailable_students Student[]
+}
+
+model Discipline {
+  id               String       @id
+  unit_oversser_id String?
+  unit_overseer    Academic?    @relation("oversees", fields: [unit_oversser_id], references: [uni_id])
+  students         Student[]
+  academics        Academic[]   @relation("of_discipline")
+  projects         Project[]
+}
+
+model Project_status {
+  id       String    @id
+  projects Project[]
+}
+
+model Project_type {
+  id       String    @id
+  projects Project[]
+}
+
+model Academic_school {
+  id       String     @id
+  academic Academic[]
+}
+
+model User_type {
+  id    String @id
+  users User[]
+}
+
+model Account {
+  id                 String    @id @default(cuid())
+  userId             String
+  providerType       String
+  provider           String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
+}

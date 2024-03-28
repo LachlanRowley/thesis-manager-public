@@ -1,0 +1,50 @@
+.popup_card {
+    background-color: #D6D2C4 !important;
+    background: none;
+    border-radius: 33px;
+    font-family: Inter, sans-serif;
+    width: 600px;
+    height: 670px;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 3%;
+    padding-top: 20px;
+    padding-left: 48px;
+    padding-right: 48px;
+    height: auto;
+}
+
+.title {
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #A6192E;
+}
+
+.popup_content {
+    width: 100%;
+}
+
+.popup_content p {
+    text-transform: capitalize;
+}
+
+.sp:hover .sptxt {
+    transform: translateX(10px);
+}
+
+.sptxt {
+    font-weight: normal;
+    font-size: 15px;
+    color: #A6192E; 
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+  }

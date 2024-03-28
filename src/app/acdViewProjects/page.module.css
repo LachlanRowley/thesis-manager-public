@@ -1,0 +1,71 @@
+#projectListContainer	{
+	width: 100vw;
+	height: fit-content;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+.ListItem	{
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-template-columns: 24% 5% 5% 66%;
+
+	min-height: 12vh;
+	height: fit-content;
+	width: 80vw;
+	
+	border-radius: 33px;
+	background-color: #D5D2C5;
+	margin: 30px auto;
+
+	padding: 0px 40px;
+	box-sizing: border-box;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+
+.ListItem_LHS	{
+	grid-column: 1 / 2;
+}
+.ListItem_LHS p	{
+	font-size: 20px;
+	margin: 10px auto;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+.ListItem_RHS	{
+	grid-column: 4 / 5;
+	width: 85%;
+	margin-left: 5vw;
+
+	padding: 30px 0px;
+
+	font-size: 16px;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+
+.ListItem_DividerA	{
+	grid-column: 2 / 3;
+	border-right: 1px solid black;
+	height: 70%;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.ListItem_DividerB	{
+	grid-column: 3 / 4;
+}
+
+.project_card * {
+  transition: width 1s;
+  text-decoration: none
+}
+
+.project_card {
+  padding-bottom: 30px;
+}

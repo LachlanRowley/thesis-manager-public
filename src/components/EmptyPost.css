@@ -1,0 +1,16 @@
+.box {
+    height: 164px;
+    width: 1160px;
+    }
+    .box .rectangle {
+    background-color: #d6d2c4;
+    border: 10px dashed;
+    border-color: #7e7e7e;
+    border-radius: 30px;
+    height: 164px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 1160px;
+    }
+    

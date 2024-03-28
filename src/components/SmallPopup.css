@@ -1,0 +1,32 @@
+.popup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+    
+}
+
+.btn{
+    width: 275px !important;
+    height: 93px;
+    color: #A6192E; 
+    /* display: flex; */
+    align-items: center;
+    justify-content:space-between;
+}
+
+.btn:hover .txt{
+    transform: translateX(10px);
+}
+
+.txt{
+    transition: transform 0.3s;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.img{
+    margin-left: auto;
+}

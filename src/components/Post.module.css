@@ -1,0 +1,86 @@
+.post {
+  text-decoration: none;
+}
+
+.post * {
+  transition: all 1s;
+}
+
+.post:hover * {
+  width: 110%;
+}
+
+
+.card {
+  background-color: #D6D2C4 !important;
+  background: none;
+  border-radius: 33px;
+  font-family: Inter, sans-serif;
+  padding: 10px;
+  height: 175px;
+  width: 100%;
+  margin: auto;
+  overflow: visible;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.card span {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
+.card div {
+  padding-bottom: 30px !important;
+}
+
+.card h2 {
+  font-weight: 700;
+  font-size: 24px;
+  font-style: normal;
+  margin: 10px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 10px;
+}
+
+.card h4 {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  margin: 10px;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+.description {
+  margin-left: 10%;
+}
+
+.popup_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline-style: none;
+}
+
+.question {
+  padding: 10px;
+}

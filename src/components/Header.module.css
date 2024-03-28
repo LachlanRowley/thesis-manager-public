@@ -1,0 +1,52 @@
+.Header	{
+	--logoWidth: 30vw;
+
+
+	display: grid;
+	/*grid-template-columns: 58vw fit-content(14vw) fit-content(14vw) fit-content(14vw);*/
+	grid-template-columns: var(--logoWidth) 1fr 2fr 2fr;
+
+	width: 80vw;
+	height: 16vh;
+	margin: auto;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+.headerLink	{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.headerLink a	{
+	cursor: pointer;
+	transition-duration: 0.1s;
+}
+.headerLink a:hover	{
+	text-decoration: underline;
+	color: #B15E64;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+#Header_Logo	{
+	display: block;
+	height: 100%;
+	width: var(--logoWidth);
+
+	/*background-image: url('../common_images/macquarie-university-logo.png');*/
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+#a1	{grid-column: 2 / 3;}
+#a2	{grid-column: 3 / 4;}
+#a3	{grid-column: 4 / 5;}
+

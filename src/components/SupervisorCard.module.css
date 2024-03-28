@@ -1,0 +1,52 @@
+.card {
+    background-color: #D6D2C4 !important;
+    background: none;
+    border-radius: 33px;
+    font-family: Inter, sans-serif;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 85px;
+    width: 100%;
+    margin: auto;
+    overflow: visible;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.discipline {
+    justify-content: center;
+    text-align: center;    
+    margin: auto;
+}
+
+.discipline h2 {
+    font-weight: normal;
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+
+.students {
+    justify-content: center;
+    margin: auto;
+}
+
+.students h2 {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 20px;
+    vertical-align: center;
+  }
+  
+.popup_box {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+outline-style: none;
+}

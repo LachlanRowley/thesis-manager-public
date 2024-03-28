@@ -1,0 +1,26 @@
+.grid h1 {
+    color: #A6192E;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.sp:hover .sptxt {
+    transform: translateX(10px);
+}
+
+.sptxt {
+    font-weight: normal;
+    font-size: 18px;
+    color: #A6192E; 
+    margin-right: 10px;
+    transition: transform 0.3s;
+    text-transform: none;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+  }

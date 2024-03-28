@@ -1,0 +1,58 @@
+.backdrop {
+    color: black;
+    z-index: auto;
+}
+
+.popup_card {
+    width: 1160px;
+    height: auto;
+    background-color: #D6D2C4;
+    z-index: 6;
+    padding: 3%;
+    padding-top: 20px;
+    border-radius: 33px;
+    transition: opacity 1s ease-in-out;
+}
+
+.left {
+
+}
+
+.left h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.icon {
+    height: 85px;
+    width: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_right h3 {
+    font-size: 16px;
+}
+
+.sp:hover .sptxt {
+    transform: translateX(10px);
+}
+
+.sptxt {
+    font-weight: normal;
+    font-size: 15px;
+    color: #A6192E; 
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+.right_icon {
+    height: 50px;
+    width: 50px;
+}
